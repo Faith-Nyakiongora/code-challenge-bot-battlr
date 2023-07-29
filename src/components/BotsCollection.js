@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
+import BotCard from "./BotCard";
 
-function BotsCollection() {
-  const [collection, setcollection] = useState([]);
-
+function BotsCollection({ collection, setCollection }) {
   useEffect(() => {
     fetch("http://localhost:3000/bots")
       .then((data) => data.json())
       .then((data) => {
-        setcollection(data);
+        setCollection(data);
 
         console.log(collection);
       });
   }, []);
 
   return (
-    <div>
-      <h1>Bots Battlr</h1>
+    <div className="row">
+      {collection.map((bot) => (
+        <BotCard key={bot.id} bot={bot} />
+      ))}
     </div>
   );
 }
