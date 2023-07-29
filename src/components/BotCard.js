@@ -1,17 +1,17 @@
 import React from "react";
 
 function BotCard({ bot }) {
-  const { id, name, bot_class, avatar_url } = bot;
+  const { id, name, bot_class, catchphrase, avatar_url } = bot;
 
   return (
-    <div class="card col-4">
+    <div className="card col-4">
       <img src={avatar_url} class="card-img-top" alt={name} />
-      <div class="card-body">
-        <h5 class="card-title">{name}</h5>
-        <p class="card-text">{bot_class}</p>
+      <div className="card-body" onClick={addToArmyBots}>
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">{bot_class}</p>
       </div>
-      <div class="card-footer">
-        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      <div className="card-footer">
+        <small className="text-body-secondary">{catchphrase}</small>
       </div>
     </div>
   );
