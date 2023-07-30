@@ -19,7 +19,7 @@ function YourBotArmy({ armyBots, setArmyBots }) {
   const botArmyCard = armyBots.map((bot) => (
     <div
       key={bot.id}
-      className="card col-4"
+      className="card col-6"
       onClick={() => handleReleaseBot(bot.id)}
     >
       <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
@@ -30,8 +30,7 @@ function YourBotArmy({ armyBots, setArmyBots }) {
       <div className="card-footer">
         <small className="text-body-secondary">{bot.catchphrase}</small>
         <button type="button" className="btn btn-danger">
-          {" "}
-          DELETE
+          X
         </button>
       </div>
     </div>
@@ -39,7 +38,7 @@ function YourBotArmy({ armyBots, setArmyBots }) {
 
   return (
     <div className="row">
-      <div className="card col-4">
+      <div className="card col-10 bot-army-section ">
         <h2>Your Bot Army</h2>
         {botArmyCard}
       </div>
