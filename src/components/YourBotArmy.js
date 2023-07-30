@@ -4,6 +4,16 @@ import BotCard from "./BotCard";
 function YourBotArmy({ armyBots, setArmyBots }) {
   const handleReleaseBot = (botId) => {
     setArmyBots((armyBots) => armyBots.filter((bot) => bot.id !== botId));
+
+    //Remove the bot from the backend
+    fetch(`http://localhost:3000/bots/${botId}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Bot deleted from backend:", data);
+      })
+      .catch((error) => console.log("Error deleting bot:", error));
   };
 
   const botArmyCard = armyBots.map((bot) => (
@@ -19,13 +29,20 @@ function YourBotArmy({ armyBots, setArmyBots }) {
       </div>
       <div className="card-footer">
         <small className="text-body-secondary">{bot.catchphrase}</small>
+        <button type="button" className="btn btn-danger">
+          {" "}
+          DELETE
+        </button>
       </div>
     </div>
   ));
 
   return (
     <div className="row">
-      <div className="card col-4">{botArmyCard}</div>
+      <div className="card col-4">
+        <h2>Your Bot Army</h2>
+        {botArmyCard}
+      </div>
     </div>
   );
   // <div className="row border border-dan">

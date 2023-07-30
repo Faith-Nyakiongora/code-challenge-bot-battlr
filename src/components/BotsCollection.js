@@ -7,7 +7,9 @@ function BotsCollection({ collection, armyBots, setArmyBots }) {
 
     //setting sellection of army bots on click
     function addToArmyBots() {
-      setArmyBots((armyBots) => [...armyBots, bot]);
+      if (!armyBots.some((enslistedBot) => enslistedBot.id === bot.id)) {
+        setArmyBots((armyBots) => [...armyBots, bot]);
+      }
     }
 
     return (
