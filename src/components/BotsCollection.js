@@ -1,5 +1,4 @@
 import React from "react";
-// import BotCard from "./BotCard";
 
 function BotsCollection({ collection, armyBots, setArmyBots }) {
   const botCard = collection.map((bot, index) => {

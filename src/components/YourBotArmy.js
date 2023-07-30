@@ -1,5 +1,4 @@
 import React from "react";
-import BotCard from "./BotCard";
 
 function YourBotArmy({ armyBots, setArmyBots }) {
   const handleReleaseBot = (botId) => {
