@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function BotsCollection({ collection, armyBots, setArmyBots }) {
+function BotsCollection({ collection, setCollection, armyBots, setArmyBots }) {
+  useEffect(() => {
+    fetch("http://localhost:3000/bots")
+      .then((data) => data.json())
+      .then((data) => {
+        setCollection(data);
+
+        console.log(collection);
+      });
+  }, []);
+
   const botCard = collection.map((bot, index) => {
     const { id, name, bot_class, catchphrase, avatar_url } = bot;
 

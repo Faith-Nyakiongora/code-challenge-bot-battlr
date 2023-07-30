@@ -68,4 +68,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # code-challenge-bot-battlr
+
+This app allows you to create your own bot army. The app fetches bot data from a backend server, displays the available bots in a collection, and lets you enlist them in your bot army by clicking on them. You can also remove bots from your army by clicking the "X" button.
+
+## Preparing Env
+
+- Clone the repository.
+- Navigate to the project directory:
+- Install dependencies:
+- Start the development server:
+
+## Components
+
+The application is built using the following components:
+
+App: The main component that holds the state for the bot collection and your bot army. It fetches bot data from the backend server and passes it to the child components.
+
+BotsCollection: Displays the collection of available bots. You can enlist a bot in your bot army by clicking on it.
+
+YourBotArmy: Displays your enlisted bot army. You can remove a bot from your army by clicking the "X" button.
+
+## Dependencies
+
+React json-server
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

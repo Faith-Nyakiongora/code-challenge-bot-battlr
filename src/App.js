@@ -8,16 +8,6 @@ function App() {
   const [collection, setCollection] = useState([]);
   const [armyBots, setArmyBots] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/bots")
-      .then((data) => data.json())
-      .then((data) => {
-        setCollection(data);
-
-        console.log(collection);
-      });
-  }, []);
-
   console.log(armyBots);
 
   return (
