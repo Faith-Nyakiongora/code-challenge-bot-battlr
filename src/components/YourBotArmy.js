@@ -1,23 +1,31 @@
 import React from "react";
 import BotCard from "./BotCard";
 
-function YourBotArmy({ armyBots }) {
+function YourBotArmy({ armyBots, setArmyBots }) {
+  const handleReleaseBot = (botId) => {
+    setArmyBots((armyBots) => armyBots.filter((bot) => bot.id !== botId));
+  };
+
   const botArmyCard = armyBots.map((bot) => (
-    <div class="card col-4">
-      <img src={bot.avatar_url} class="card-img-top" alt={bot.name} />
-      <div class="card-body">
-        <h5 class="card-title">{bot.name}</h5>
-        <p class="card-text">{bot.bot_class}</p>
+    <div
+      key={bot.id}
+      className="card col-4"
+      onClick={() => handleReleaseBot(bot.id)}
+    >
+      <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
+      <div className="card-body">
+        <h5 className="card-title">{bot.name}</h5>
+        <p className="card-text">{bot.bot_class}</p>
       </div>
-      <div class="card-footer">
-        <small class="text-body-secondary">Random text</small>
+      <div className="card-footer">
+        <small className="text-body-secondary">{bot.catchphrase}</small>
       </div>
     </div>
   ));
 
   return (
     <div className="row">
-      <div class="card col-4">{botArmyCard}</div>
+      <div className="card col-4">{botArmyCard}</div>
     </div>
   );
   // <div className="row border border-dan">

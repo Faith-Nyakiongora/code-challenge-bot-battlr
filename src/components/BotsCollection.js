@@ -18,7 +18,7 @@ function BotsCollection({ collection, armyBots, setArmyBots }) {
           <p className="card-text">{bot_class}</p>
         </div>
         <div className="card-footer">
-          <small className="text-body-secondary"></small>
+          <small className="text-body-secondary">{catchphrase}</small>
         </div>
       </div>
     );
