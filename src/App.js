@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 // import "./App.css";
 import React, { useState, useEffect } from "react";
 import BotsCollection from "./components/BotsCollection";
@@ -18,12 +18,17 @@ function App() {
       });
   }, []);
 
-  console.log(collection);
+  console.log(armyBots);
 
   return (
     <div className="container">
       <YourBotArmy armyBots={armyBots} setArmyBots={setArmyBots} />
-      <BotsCollection collection={collection} setCollection={setCollection} />
+      <BotsCollection
+        collection={collection}
+        setCollection={setCollection}
+        setArmyBots={setArmyBots}
+        armyBots={armyBots}
+      />
     </div>
   );
 }
