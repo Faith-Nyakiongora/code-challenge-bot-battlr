@@ -6,13 +6,8 @@ function BotsCollection({ collection, armyBots, setArmyBots }) {
     const { id, name, bot_class, catchphrase, avatar_url } = bot;
 
     //setting sellection of army bots on click
-    function addToArmyBots(event) {
-      const findBot = collection.find(
-        (bot) => bot.id === parseInt(event.target.id)
-      );
-      console.log(findBot);
-
-      setArmyBots([...armyBots, findBot]);
+    function addToArmyBots() {
+      setArmyBots((armyBots) => [...armyBots, bot]);
     }
 
     return (
@@ -23,7 +18,7 @@ function BotsCollection({ collection, armyBots, setArmyBots }) {
           <p className="card-text">{bot_class}</p>
         </div>
         <div className="card-footer">
-          <small className="text-body-secondary">{catchphrase}</small>
+          <small className="text-body-secondary"></small>
         </div>
       </div>
     );

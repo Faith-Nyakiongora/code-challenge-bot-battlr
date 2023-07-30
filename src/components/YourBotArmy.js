@@ -2,27 +2,21 @@ import React from "react";
 import BotCard from "./BotCard";
 
 function YourBotArmy({ armyBots }) {
-  const botArmyCard = armyBots.map(() => (
-    <div className="row">
-      <div class="card col-4">
-        <img
-          src={armyBots.avatar_url}
-          class="card-img-top"
-          alt={armyBots.name}
-        />
-        <div class="card-body">
-          <h5 class="card-title">{armyBots.name}</h5>
-          <p class="card-text">{armyBots.bot_class}</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Random text</small>
-        </div>
+  const botArmyCard = armyBots.map((bot) => (
+    <div class="card col-4">
+      <img src={bot.avatar_url} class="card-img-top" alt={bot.name} />
+      <div class="card-body">
+        <h5 class="card-title">{bot.name}</h5>
+        <p class="card-text">{bot.bot_class}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Random text</small>
       </div>
     </div>
   ));
 
   return (
-    <div className="row border border-success">
+    <div className="row">
       <div class="card col-4">{botArmyCard}</div>
     </div>
   );
