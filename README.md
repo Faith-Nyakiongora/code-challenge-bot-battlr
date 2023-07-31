@@ -88,6 +88,8 @@ App: The main component that holds the state for the bot collection and your bot
 
 BotsCollection: Displays the collection of available bots. You can enlist a bot in your bot army by clicking on it.
 
+BotCard:
+
 YourBotArmy: Displays your enlisted bot army. You can remove a bot from your army by clicking the "X" button.
 
 ## Dependencies

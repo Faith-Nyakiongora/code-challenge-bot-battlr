@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import BotCard from "./BotCard";
 
+// fetching bots data
 function BotsCollection({ collection, setCollection, armyBots, setArmyBots }) {
   useEffect(() => {
     fetch("http://localhost:3000/bots")
