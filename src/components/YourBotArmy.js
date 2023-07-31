@@ -43,14 +43,7 @@ function YourBotArmy({ armyBots, setArmyBots }) {
       </div>
     </div>
   );
-  // <div className="row border border-dan">
-  //   <h2>Your Bot Arsmy</h2>
-  //   <div>
-  //     {armyBots.map((bot) => (
-  //       <BotCard key={bot.id} bot={bot} />
-  //     ))}
-  //   </div>
-  // </div>
+
 }
 
 export default YourBotArmy;
